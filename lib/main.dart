@@ -4,10 +4,10 @@ void main() {
   return runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.blue,
         appBar: AppBar(
           title: Text('Dédé'),
-          backgroundColor: Colors.lightBlueAccent,
+          backgroundColor: Colors.blue,
         ),
         body: DicePage(),
       ),
@@ -16,32 +16,30 @@ void main() {
 }
 
 class DicePage extends StatelessWidget {
-  int leftDiceNumber = 5;
-  int rightDiceNumber = 3;
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Center(
-        child: Row(
-          children: <Widget>[
-            Expanded(
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.asset('assets/images/dice$leftDiceNumber.png'),
-              ),
-            ),
-            Expanded(
-                child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child:
-                        Image.asset('assets/images/dice$rightDiceNumber.png'))),
-            RaisedButton(
-              onPressed: () {},
-              child: Text('Lancer de dés'),
-            )
-          ],
-        ),
+                  padding: const EdgeInsets.all(16.0),
+                  child: FlatButton(
+                      onPressed: () {
+                        print(
+                            "Vous avez appuyé sur le bouton l'image de gauche");
+                      },
+                      child: Image.asset('assets/images/dice1.png')))),
+          Expanded(
+              child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: FlatButton(
+                      onPressed: () {
+                        print(
+                            "Vous avez appuyé sur le bouton l'image de droite");
+                      },
+                      child: Image.asset('assets/images/dice2.png')))),
+        ],
       ),
     );
   }
