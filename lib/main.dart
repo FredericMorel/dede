@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   return runApp(
@@ -24,7 +25,7 @@ class DicePage extends StatelessWidget {
           Expanded(
               child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: FlatButton(
+                  child: TextButton(
                       onPressed: () {
                         print(
                             "Vous avez appuyé sur le bouton l'image de gauche");
@@ -33,7 +34,7 @@ class DicePage extends StatelessWidget {
           Expanded(
               child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: FlatButton(
+                  child: TextButton(
                       onPressed: () {
                         print(
                             "Vous avez appuyé sur le bouton l'image de droite");
